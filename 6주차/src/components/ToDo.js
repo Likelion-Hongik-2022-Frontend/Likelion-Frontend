@@ -12,3 +12,5 @@ function ToDo({ text, onBtnClick, id }) {
     </li>
   );
 }
+
+export default ToDo;
