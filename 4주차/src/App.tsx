@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
-import { useRef } from 'react';
+import { motion, useMotionValue, useScroll, useTransform } from 'framer-motion';
+import { useEffect, useRef } from 'react';
 
 const Wrapper = styled.div`
-  height: 100vh;
+  height: 500vh;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -70,21 +70,21 @@ const boxVariants: any = {
 // };
 
 function App() {
-  const biggerBoxRef = useRef(null);
+  const x = useMotionValue(0);
+  const potato = useTransform(x, [-800, 0, 800], [2, 1, 0.1]);
+  const { scrollY, scrollYProgress } = useScroll();
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 5]);
+
+  useEffect(() => {
+    scrollY.onChange(() => console.log(scrollY.get(), scrollYProgress.get()));
+  }, [scrollY, scrollYProgress]);
+
+  useEffect(() => {
+    potato.onChange(() => console.log(potato.get()));
+  }, [x]);
   return (
     <Wrapper>
-      <BiggerBox ref={biggerBoxRef}>
-        <Box
-          drag
-          dragSnapToOrigin
-          dragElastic={0}
-          dragConstraints={biggerBoxRef}
-          variants={boxVariants}
-          whileHover="hover"
-          whileDrag="drag"
-          whileTap="click"
-        />
-      </BiggerBox>
+      <Box style={{ x, scale: scale }} drag="x" dragSnapToOrigin />
     </Wrapper>
   );
 }
