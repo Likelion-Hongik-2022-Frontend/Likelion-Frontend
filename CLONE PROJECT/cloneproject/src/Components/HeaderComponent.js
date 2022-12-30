@@ -1,29 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Header, HeaderBtn, Logo } from '../styles/styled';
+import { Header, HeaderBtn, Logo } from '../styles/Styled';
 
 function HeaderComponent(){
     return(
         <Header>
             <Logo>
-                <Link to="/"  style={{textDecoration:"none", color: "white"}}>
-                    <p>DEPROMEET</p>
-                </Link>                  
+                <p>DEPROMEET</p>                  
             </Logo>
             <HeaderBtn>
-                <Link to="/project"  style={{textDecoration:"none", color: "white"}}>
-                    <p>프로젝트</p>
-                </Link>
+                <p>프로젝트</p>
             </HeaderBtn>
             <HeaderBtn>
-                <Link to="/contact"  style={{textDecoration:"none", color: "white"}}>
-                    <p>문의하기</p>
-                </Link>
+                <p>문의하기</p>
             </HeaderBtn>
             <HeaderBtn>
-                <Link to="/recruit"  style={{textDecoration:"none", color: "white"}}>
-                    <p>리크루팅</p>
-                </Link>
+                <p>리크루팅</p>
             </HeaderBtn>
         </Header>        
     )

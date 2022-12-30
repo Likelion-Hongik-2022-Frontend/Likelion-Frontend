@@ -1,63 +1,33 @@
 import React from "react";
-import {
+import { 
     Information,
-    Slogan3,
-    InfBox,
-    SmallInf,
-    BigInf,
-    Boxes,
-} from "../styles/styled.js"
-import useScrollFadeIn from "../hooks/useScrollFadeIn";
+    Slogan4,
+ } from "../styles/Styled";
+import BtnActive from "./BtnActiveComponent";
+import { isBtnActiveAtom } from '../hooks/Atom';
+import { useRecoilValue } from "recoil";
+import UIUX from './Team/UIUX';
+import Web from './Team/Web';
+import IOS from './Team/IOS';
+import Android from "./Team/Android";
+import Backend from "./Team/Backend";
+import useScrollFadeIn from "../hooks/UseScrollFadeIn";
 
 function Section3(){
 
+    const isBtnActive = useRecoilValue(isBtnActiveAtom);
     const animatedUpItem = useScrollFadeIn('up', 0.2, 0);
-    const animatedRightItem = useScrollFadeIn('right', 0.2, 0.1);
 
     return(
-        <Information>
-            <Slogan3  {...animatedUpItem}>
-            디프만은 서비스 기획부터 론칭, 그리고 개선까지
-            <br/>
-            다양한 경험을 통해 성장하는 모임이에요.
-            </Slogan3>
-            <Boxes {...animatedRightItem}>
-                <InfBox>
-                    <SmallInf>
-                    탄생한 지
-                    </SmallInf>
-                    <BigInf>
-                    6년
-                    </BigInf>
-                </InfBox>
-                <InfBox>
-                    <SmallInf>
-                    누적 멤버 수
-                    </SmallInf>
-                    <BigInf>
-                    800명+
-                    </BigInf>
-                </InfBox>
-                <InfBox>
-                    <SmallInf>
-                    론칭 성공률
-                    </SmallInf>
-                    <BigInf>
-                    100%
-                    </BigInf>
-                    <p style={{fontSize:"20px", color:"#4b4b4b", paddingTop:"24px"}}>10,11기 기준</p>
-                </InfBox>
-                <InfBox>
-                    <SmallInf>
-                    론칭 서비스
-                    </SmallInf>
-                    <BigInf>
-                    34개+
-                    </BigInf>
-                    <p style={{fontSize:"20px", color:"#4b4b4b", paddingTop:"24px"}}>5~11기 기준</p>
-                </InfBox> 
-            </Boxes>
-      </Information>
+        <Information {...animatedUpItem}>
+            <Slogan4 >디프만의 팀은 어떻게 구성되어 있을까요?</Slogan4>
+            <BtnActive/>
+            { isBtnActive === '1' && <UIUX/>}
+            { isBtnActive === '2' && <Web/>}
+            { isBtnActive === '3' && <IOS/>}
+            { isBtnActive === '4' && <Android/>}
+            { isBtnActive === '5' && <Backend/>}
+        </Information>
     )
 }
 

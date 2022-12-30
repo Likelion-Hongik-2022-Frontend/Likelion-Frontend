@@ -4,15 +4,12 @@ import {
     Slogan4,
     Slogan5,
     BigBox,
-    PopDivs,
-} from "../styles/styled.js"
-import BtnActive from "../Components/BtnActiveComponent";
+} from "../styles/Styled.js"
 import img1to3 from '../img/1to3.png'
 import img4to8 from '../img/4to8.png'
 import img9to13 from '../img/9to13.png'
-import designPng from "../img/design.png"
 import img14to17 from '../img/14to17.png'
-import useScrollFadeIn from "../hooks/useScrollFadeIn";
+import useScrollFadeIn from "../hooks/UseScrollFadeIn";
 
 function Section4(){
 
@@ -20,20 +17,6 @@ function Section4(){
 
     return(
         <>
-            <Information>
-                <Slogan4>디프만의 팀은 어떻게 구성되어 있을까요?</Slogan4>
-                <BtnActive/>
-                <div style={{display: "grid", placeItems:"center", gridTemplateColumns: "repeat(1,1fr)" }}>
-                    <PopDivs>
-                        <img className="teamPng" alt="designPng" src={designPng}/>
-                        <div style={{textAlign:"left"}}>
-                            <h3>서비스 디자인의 모든 것을 담당하는<br/>UIUX 디자이너</h3>
-                            <p style={{fontSize:"20px"}}>서비스 기획부터 UX/UI, 브랜딩, 마케팅까지 -<br/>서비스 런칭에 필요한 메인 업무를 담당하게 되어요.</p>                            
-                        </div>
- 
-                    </PopDivs>
-                </div>
-            </Information>
             <Information {...animatedRightItem}>
                 <Slogan4>디프만 12기는 다음과 같이 진행될 예정이에요!</Slogan4>
                 <Slogan5>디프만 12기는 매주 토요일, 총 17주간 진행됩니다.</Slogan5>
