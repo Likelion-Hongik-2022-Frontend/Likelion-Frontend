@@ -1,7 +1,7 @@
 import React from "react";
 import {
     Information, Slogan4
-} from '../styles/styled.js'
+} from '../styles/Styled.js'
 import aws from '../img/aws.svg'
 import dcamp from '../img/dcamp.svg'
 import inflearn from '../img/inflearn.svg'
@@ -9,7 +9,7 @@ import surfit from '../img/surfit.svg'
 import openup from '../img/openup.png'
 import notefolio from '../img/notefolio.svg'
 
-import useScrollFadeIn from "../hooks/useScrollFadeIn.jsx";
+import useScrollFadeIn from "../hooks/UseScrollFadeIn.jsx";
 
 function Section6(){
 

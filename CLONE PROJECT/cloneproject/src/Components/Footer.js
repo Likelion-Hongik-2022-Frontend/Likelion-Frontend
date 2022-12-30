@@ -1,5 +1,5 @@
 import React from "react";
-import { Logo } from "../styles/styled";
+import { Logo } from "../styles/Styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 

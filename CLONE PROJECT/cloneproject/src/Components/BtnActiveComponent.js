@@ -1,27 +1,27 @@
 import React from "react";
-import { useRecoilValue } from 'recoil';
-import { isBtnActiveAtom } from '../hooks/atom';
-import { useSetRecoilState } from 'recoil';
+import { isBtnActiveAtom } from '../hooks/Atom';
+import { useRecoilState } from 'recoil';
 
 function BtnActive(){
 
-    const isBtnActive = useRecoilValue(isBtnActiveAtom);
-    const setBtnActive = useSetRecoilState(isBtnActiveAtom);
+    const [isBtnActive, setIsBtnActive] = useRecoilState(isBtnActiveAtom);
 
     return(
         <div className="forPD">
             <div>
                 <btn id="btnactive"
                     className={`btn ${isBtnActive === '1' ? 'active' : ''}`}
-                    onClick={()=>setBtnActive('1')}
+                    onClick={()=>{
+                        setIsBtnActive('1')
+                    }}
                     >
                     UIUX Design
-                </btn>             
+                </btn>       
             </div>
             <div>
                 <btn id="btnactive"
                     className={`btn ${isBtnActive === '2' ? 'active' : ''}`}
-                    onClick={()=>setBtnActive('2')}
+                    onClick={()=>setIsBtnActive('2')}
                     >
                     Web
                 </btn>                
@@ -29,7 +29,7 @@ function BtnActive(){
             <div>
                 <btn id="btnactive"
                     className={`btn ${isBtnActive === '3' ? 'active' : ''}`}
-                    onClick={()=>setBtnActive('3')}
+                    onClick={()=>setIsBtnActive('3')}
                     >
                     iOS
                 </btn>                
@@ -37,7 +37,7 @@ function BtnActive(){
             <div>
                 <btn id="btnactive"
                     className={`btn ${isBtnActive === '4' ? 'active' : ''}`}
-                    onClick={()=>setBtnActive('4')}
+                    onClick={()=>setIsBtnActive('4')}
                     >
                     Android
                 </btn>                
@@ -45,7 +45,7 @@ function BtnActive(){
             <div>
                 <btn id="btnactive"
                     className={`btn ${isBtnActive === '5' ? 'active' : ''}`}
-                    onClick={()=>setBtnActive('5')}
+                    onClick={()=>setIsBtnActive('5')}
                     >
                     Backend
                 </btn>                

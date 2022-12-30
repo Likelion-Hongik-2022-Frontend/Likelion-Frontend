@@ -4,3 +4,8 @@ export const isBtnActiveAtom = atom({
     key: "isActive",
     default: "1",
 });
+
+export const isRegistAtom = atom({
+    key:"isRegist",
+    default:false,
+})

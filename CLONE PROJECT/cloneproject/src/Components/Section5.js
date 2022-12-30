@@ -3,11 +3,11 @@ import {
     Information,
     Slogan4,
     DetailBox,
-} from '../styles/styled.js'
+} from '../styles/Styled.js'
 import imgmedium from '../img/medium.png'
 import imginterview from '../img/interview.png'
 import imgprojects from '../img/projects.png'
-import useScrollFadeIn from "../hooks/useScrollFadeIn.jsx";
+import useScrollFadeIn from "../hooks/UseScrollFadeIn.jsx";
 
 function Section5(){
 
